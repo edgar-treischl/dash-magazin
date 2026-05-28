@@ -41,14 +41,14 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          body: |
-            Published to GitHub Packages: `@edgar-treischl/reports`
-            
-            Install with:
-            ```bash
-            yarn add @edgar-treischl/reports@${{ github.ref_name }}
-            ```
+      - name: Extract version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Summary
+        run: |
+          echo "✅ Published @edgar-treischl/reports@${{ steps.version.outputs.VERSION }}"
+          echo "📦 View at: https://github.com/edgar-treischl/dash-magazin/packages/npm/reports"
+          echo "📥 Install with: yarn add @edgar-treischl/reports@${{ steps.version.outputs.VERSION }}"
+
 
