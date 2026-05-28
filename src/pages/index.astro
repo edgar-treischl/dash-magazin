@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="landing-container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Dash Magazin</h1>
+        <p class="hero-subtitle">
+          Transforming analytical insights into narrative-driven editorial experiences.
+        </p>
+        <p class="hero-description">
+          Discover in-depth investigations, interactive storytelling, and data visualizations that bring complex reports to life.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Stories Section -->
+    <section class="featured-stories">
+      <h2 class="section-title">Latest Stories</h2>
+
+      <div class="stories-grid">
+        <!-- Story Card Template 1 -->
+        <a href="/stories/template/" class="story-card">
+          <div class="story-card-header">
+            <h3>Story Template</h3>
+          </div>
+          <p class="story-card-description">
+            An example story page structure ready to be filled with your content. Includes sections for narrative, insights, and visualizations.
+          </p>
+          <div class="story-card-footer">
+            <span class="story-date">Coming soon</span>
+          </div>
+        </a>
+
+        <!-- Placeholder Card 2 -->
+        <div class="story-card story-card-placeholder">
+          <div class="story-card-header">
+            <h3>Next Story</h3>
+          </div>
+          <p class="story-card-description">
+            Your next editorial piece will appear here.
+          </p>
+          <div class="story-card-footer">
+            <span class="story-date">Upcoming</span>
+          </div>
+        </div>
+
+        <!-- Placeholder Card 3 -->
+        <div class="story-card story-card-placeholder">
+          <div class="story-card-header">
+            <h3>Another Story</h3>
+          </div>
+          <p class="story-card-description">
+            More editorial content coming soon.
+          </p>
+          <div class="story-card-footer">
+            <span class="story-date">Upcoming</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+      <div class="about-content">
+        <h2 class="section-title">About</h2>
+        <p>
+          Dash Magazin is a digital editorial platform that transforms analytical PDF reports into modern web-native stories. 
+          We believe in separating analysis from presentation — combining rigorous research with immersive storytelling.
+        </p>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .landing-container {
+    width: 100%;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(50, 69, 255, 0.05) 0%, rgba(188, 82, 238, 0.1) 100%);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    color: #111827;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 24px;
+    line-height: 1.4;
+    color: #3245ff;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+  }
+
+  .hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  /* Section Styling */
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 40px 0;
+  }
+
+  /* Featured Stories */
+  .featured-stories {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  .story-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .story-card:hover {
+    border-color: #3245ff;
+    box-shadow: 0 4px 20px rgba(50, 69, 255, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .story-card-placeholder {
+    background: #f9fafb;
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .story-card-placeholder:hover {
+    border-color: #e5e7eb;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .story-card-header {
+    margin-bottom: 16px;
+  }
+
+  .story-card-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+
+  .story-card-description {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 20px 0;
+  }
+
+  .story-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .story-date {
+    font-size: 13px;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* About Section */
+  .about {
+    padding: 80px 20px;
+    background: #f9fafb;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4b5563;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      padding: 60px 16px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+    }
+
+    .hero-description {
+      font-size: 16px;
+    }
+
+    .featured-stories,
+    .about {
+      padding: 60px 16px;
+    }
+
+    .section-title {
+      font-size: 24px;
+    }
+
+    .stories-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+</style>
