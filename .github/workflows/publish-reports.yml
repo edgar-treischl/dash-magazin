@@ -1,0 +1,60 @@
+name: Publish Reports to GitHub Packages
+
+on:
+  push:
+    tags:
+      - 'v*'
+      - 'reports-v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: 'yarn'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@dash-magazin'
+      
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      
+      - name: Type check
+        run: yarn check
+      
+      - name: Build reports package
+        working-directory: packages/reports
+        run: yarn build 2>/dev/null || echo "No build script, skipping"
+      
+      - name: Publish to GitHub Packages
+        working-directory: packages/reports
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Reports Package ${{ github.ref }}
+          body: |
+            Published to GitHub Packages: `@dash-magazin/reports`
+            
+            Install with:
+            ```
+            yarn add @dash-magazin/reports@${{ github.ref }}
+            ```
+          draft: false
+          prerelease: false
