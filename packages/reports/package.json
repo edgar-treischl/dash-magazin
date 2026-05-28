@@ -1,6 +1,6 @@
 {
   "name": "@edgar-treischl/reports",
-  "version": "2026.05.28",
+  "version": "2026.05.29",
   "description": "Dash Magazin editorial story components for web integration",
   "type": "module",
   "main": "./index.js",
