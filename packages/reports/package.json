@@ -10,6 +10,10 @@
       "import": "./index.js"
     },
     "./energy-transition-2026": {
+      "import": "./energy-2026/index.jsx",
+      "types": "./energy-2026/index.d.ts"
+    },
+    "./energy-transition-2026/astro": {
       "import": "./energy-2026/index.astro"
     },
     "./energy-transition-2026/data": {
@@ -32,6 +36,8 @@
   "homepage": "https://github.com/edgar-treischl/dash-magazin#readme",
   "keywords": [
     "astro",
+    "react",
+    "nextjs",
     "editorial",
     "stories",
     "reports",
@@ -45,6 +51,15 @@
     "node": ">=22.12.0"
   },
   "peerDependencies": {
-    "astro": "^6.0.0"
+    "astro": "^6.0.0",
+    "react": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    }
   }
 }
