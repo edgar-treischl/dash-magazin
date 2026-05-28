@@ -1,0 +1,28 @@
+---
+export interface Props {
+  children: any;
+}
+
+const { children } = Astro.props;
+---
+
+<aside class="key-insight">
+  <slot />
+</aside>
+
+<style>
+  .key-insight {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f0f4ff;
+    border-left: 4px solid #0066cc;
+    border-radius: 4px;
+  }
+
+  :global(.key-insight p) {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+  }
+</style>

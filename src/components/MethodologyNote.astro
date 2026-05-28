@@ -1,0 +1,36 @@
+---
+export interface Props {
+  children: any;
+}
+
+const { children } = Astro.props;
+---
+
+<aside class="methodology-note">
+  <h4>Methodology</h4>
+  <slot />
+</aside>
+
+<style>
+  .methodology-note {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f5f0ff;
+    border: 1px solid #e0d4ff;
+    border-radius: 6px;
+    font-size: 0.95rem;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #663399;
+    font-size: 1rem;
+  }
+
+  :global(.methodology-note p) {
+    color: #555;
+    line-height: 1.6;
+    margin: 0.5rem 0;
+  }
+</style>

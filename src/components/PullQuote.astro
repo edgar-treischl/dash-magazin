@@ -1,0 +1,41 @@
+---
+export interface Props {
+  author?: string;
+  children: any;
+}
+
+const { author, children } = Astro.props;
+---
+
+<blockquote class="pull-quote">
+  <p>
+    <slot />
+  </p>
+  {author && <footer>— {author}</footer>}
+</blockquote>
+
+<style>
+  .pull-quote {
+    margin: 2rem 0;
+    padding: 2rem;
+    border-left: 3px solid #0066cc;
+    background: #f9f9f9;
+    font-size: 1.3rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  p {
+    margin: 0;
+    color: #1a1a1a;
+  }
+
+  footer {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: normal;
+    font-weight: 500;
+  }
+</style>

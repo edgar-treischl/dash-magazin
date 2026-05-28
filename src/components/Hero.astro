@@ -1,0 +1,59 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  byline?: string;
+  publishDate?: string;
+}
+
+const { title, subtitle, byline, publishDate } = Astro.props;
+---
+
+<header class="hero">
+  <div class="hero-content">
+    <h1>{title}</h1>
+    {subtitle && <p class="subtitle">{subtitle}</p>}
+    {byline && <p class="byline">{byline}</p>}
+    {publishDate && <time class="publish-date">{publishDate}</time>}
+  </div>
+</header>
+
+<style>
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .byline {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .publish-date {
+    font-size: 0.9rem;
+    color: #999;
+  }
+</style>

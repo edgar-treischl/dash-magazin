@@ -3,250 +3,155 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <div class="landing-container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">Dash Magazin</h1>
-        <p class="hero-subtitle">
-          Transforming analytical insights into narrative-driven editorial experiences.
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-gray-900">Dash Magazin</h1>
+      <a href="#about" class="text-gray-600 hover:text-gray-900 transition">
+        About
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <svg class="w-full h-full" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 400C0 400 150 350 300 400C450 450 600 300 750 350C900 400 1050 300 1200 350C1350 400 1440 300 1440 300V800H0Z" fill="url(#gradient1)" opacity="0.1"/>
+        <defs>
+          <linearGradient id="gradient1" x1="0" y1="0" x2="1440" y2="800">
+            <stop offset="0%" stop-color="#3245FF"/>
+            <stop offset="100%" stop-color="#BC52EE"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 py-24 sm:py-32 md:py-40 text-center">
+      <div class="space-y-8">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight">
+          <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Dash Magazin
+          </span>
+        </h1>
+        <p class="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto font-medium">
+          Transforming analytical insights into narrative-driven editorial experiences
         </p>
-        <p class="hero-description">
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">
           Discover in-depth investigations, interactive storytelling, and data visualizations that bring complex reports to life.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Featured Stories Section -->
-    <section class="featured-stories">
-      <h2 class="section-title">Latest Stories</h2>
+  <!-- Featured Stories Section -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16">
+        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">Latest Stories</h2>
+        <p class="mt-4 text-lg text-gray-600">Explore our editorial insights and analysis</p>
+      </div>
 
-      <div class="stories-grid">
-        <!-- Story Card Template 1 -->
-        <a href="/stories/template/" class="story-card">
-          <div class="story-card-header">
-            <h3>Story Template</h3>
-          </div>
-          <p class="story-card-description">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Featured Story Card -->
+        <a 
+          href="/stories/template/" 
+          class="group relative h-full rounded-lg border border-gray-200 bg-white p-8 transition-all duration-300 hover:border-blue-400 hover:shadow-lg hover:-translate-y-1"
+        >
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500"></div>
+          <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition">
+            Story Template
+          </h3>
+          <p class="mt-4 text-gray-600 leading-relaxed">
             An example story page structure ready to be filled with your content. Includes sections for narrative, insights, and visualizations.
           </p>
-          <div class="story-card-footer">
-            <span class="story-date">Coming soon</span>
+          <div class="mt-6 flex items-center justify-between pt-6 border-t border-gray-200">
+            <span class="text-sm font-semibold text-blue-600 uppercase tracking-wide">
+              Coming soon
+            </span>
+            <svg class="h-5 w-5 text-blue-600 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
           </div>
         </a>
 
-        <!-- Placeholder Card 2 -->
-        <div class="story-card story-card-placeholder">
-          <div class="story-card-header">
-            <h3>Next Story</h3>
-          </div>
-          <p class="story-card-description">
+        <!-- Placeholder Card 1 -->
+        <div class="relative h-full rounded-lg border border-gray-200 bg-gray-50 p-8 opacity-60">
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gray-300"></div>
+          <h3 class="text-xl font-bold text-gray-600">
+            Next Story
+          </h3>
+          <p class="mt-4 text-gray-500 leading-relaxed">
             Your next editorial piece will appear here.
           </p>
-          <div class="story-card-footer">
-            <span class="story-date">Upcoming</span>
+          <div class="mt-6 flex items-center justify-between pt-6 border-t border-gray-200">
+            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">
+              Upcoming
+            </span>
           </div>
         </div>
 
-        <!-- Placeholder Card 3 -->
-        <div class="story-card story-card-placeholder">
-          <div class="story-card-header">
-            <h3>Another Story</h3>
-          </div>
-          <p class="story-card-description">
+        <!-- Placeholder Card 2 -->
+        <div class="relative h-full rounded-lg border border-gray-200 bg-gray-50 p-8 opacity-60">
+          <div class="mb-4 h-12 w-12 rounded-lg bg-gray-300"></div>
+          <h3 class="text-xl font-bold text-gray-600">
+            Another Story
+          </h3>
+          <p class="mt-4 text-gray-500 leading-relaxed">
             More editorial content coming soon.
           </p>
-          <div class="story-card-footer">
-            <span class="story-date">Upcoming</span>
+          <div class="mt-6 flex items-center justify-between pt-6 border-t border-gray-200">
+            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">
+              Upcoming
+            </span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Section -->
-    <section class="about">
-      <div class="about-content">
-        <h2 class="section-title">About</h2>
+  <!-- About Section -->
+  <section id="about" class="bg-gradient-to-br from-gray-50 to-gray-100 py-20 sm:py-28">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-8">About Dash Magazin</h2>
+      <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
         <p>
           Dash Magazin is a digital editorial platform that transforms analytical PDF reports into modern web-native stories. 
           We believe in separating analysis from presentation — combining rigorous research with immersive storytelling.
         </p>
+        <p>
+          Our approach prioritizes narrative over interface, content over complexity. Every story is designed to engage 
+          readers through clear communication, compelling visuals, and interactive elements that bring data to life.
+        </p>
+        <p>
+          We're building a publishing platform that serves analysts, researchers, and editors — where data-driven insights 
+          become accessible, memorable editorial experiences.
+        </p>
       </div>
-    </section>
-  </div>
+
+      <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="text-3xl font-bold text-blue-600 mb-2">Data-First</div>
+          <p class="text-gray-600">Rigorous analysis and research as the foundation</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="text-3xl font-bold text-purple-600 mb-2">Story-Led</div>
+          <p class="text-gray-600">Narrative clarity and engagement as the goal</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+          <div class="text-3xl font-bold text-indigo-600 mb-2">Web-Native</div>
+          <p class="text-gray-600">Built for modern digital experiences and accessibility</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="text-sm">
+        © 2026 Dash Magazin. Editorial platform for data-driven storytelling.
+      </p>
+    </div>
+  </footer>
 </Layout>
-
-<style>
-  .landing-container {
-    width: 100%;
-  }
-
-  /* Hero Section */
-  .hero {
-    padding: 100px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(50, 69, 255, 0.05) 0%, rgba(188, 82, 238, 0.1) 100%);
-  }
-
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .hero-title {
-    font-size: 56px;
-    font-weight: 800;
-    margin: 0 0 20px 0;
-    color: #111827;
-    letter-spacing: -1px;
-  }
-
-  .hero-subtitle {
-    font-size: 24px;
-    line-height: 1.4;
-    color: #3245ff;
-    margin: 0 0 20px 0;
-    font-weight: 600;
-  }
-
-  .hero-description {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #4b5563;
-    margin: 0;
-  }
-
-  /* Section Styling */
-  .section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #111827;
-    margin: 0 0 40px 0;
-  }
-
-  /* Featured Stories */
-  .featured-stories {
-    padding: 80px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .stories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 32px;
-  }
-
-  .story-card {
-    display: flex;
-    flex-direction: column;
-    padding: 32px;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    background: white;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-
-  .story-card:hover {
-    border-color: #3245ff;
-    box-shadow: 0 4px 20px rgba(50, 69, 255, 0.1);
-    transform: translateY(-4px);
-  }
-
-  .story-card-placeholder {
-    background: #f9fafb;
-    cursor: default;
-    opacity: 0.6;
-  }
-
-  .story-card-placeholder:hover {
-    border-color: #e5e7eb;
-    box-shadow: none;
-    transform: none;
-  }
-
-  .story-card-header {
-    margin-bottom: 16px;
-  }
-
-  .story-card-header h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #111827;
-    margin: 0;
-  }
-
-  .story-card-description {
-    flex: 1;
-    font-size: 15px;
-    line-height: 1.6;
-    color: #4b5563;
-    margin: 0 0 20px 0;
-  }
-
-  .story-card-footer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .story-date {
-    font-size: 13px;
-    color: #6b7280;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  /* About Section */
-  .about {
-    padding: 80px 20px;
-    background: #f9fafb;
-  }
-
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .about-content p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #4b5563;
-    margin: 0;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero {
-      padding: 60px 16px;
-    }
-
-    .hero-title {
-      font-size: 40px;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-    }
-
-    .hero-description {
-      font-size: 16px;
-    }
-
-    .featured-stories,
-    .about {
-      padding: 60px 16px;
-    }
-
-    .section-title {
-      font-size: 24px;
-    }
-
-    .stories-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-    }
-  }
-</style>
