@@ -1,6 +1,6 @@
 {
   "name": "@edgar-treischl/reports",
-  "version": "2026.05.29",
+  "version": "2026.05.30",
   "description": "Dash Magazin editorial story components for web integration",
   "type": "module",
   "main": "./index.js",
@@ -10,8 +10,8 @@
       "import": "./index.js"
     },
     "./energy-transition-2026": {
-      "import": "./energy-2026/index.jsx",
-      "types": "./energy-2026/index.d.ts"
+      "types": "./energy-2026/index.d.ts",
+      "import": "./energy-2026/index.js"
     },
     "./energy-transition-2026/astro": {
       "import": "./energy-2026/index.astro"
