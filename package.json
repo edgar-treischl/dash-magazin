@@ -1,0 +1,8 @@
+{
+  "name": "dash-magazin",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
