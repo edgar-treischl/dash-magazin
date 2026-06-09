@@ -4,5 +4,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build": "yarn workspace preview build",
+    "dev": "yarn workspace preview dev",
+    "lint": "yarn workspace preview lint"
+  }
 }
