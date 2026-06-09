@@ -1,4 +1,4 @@
-.PHONY: help install dev build lint clean test publish-artifact validate-story list-stories
+.PHONY: help install dev build lint clean test publish-artifact validate-story list-stories kill
 
 # Default target
 help:
@@ -7,6 +7,7 @@ help:
 	@echo "DEVELOPMENT:"
 	@echo "  make install          - Install dependencies (yarn workspaces)"
 	@echo "  make dev              - Start preview app (http://localhost:3000)"
+	@echo "  make kill             - Kill local development server (port 3000)"
 	@echo "  make build            - Build preview app for production"
 	@echo "  make lint             - Run ESLint on all code"
 	@echo ""
@@ -29,9 +30,15 @@ install:
 	yarn install
 
 dev:
+	@lsof -ti:3000 | xargs kill -9 2>/dev/null || true
 	@echo "🚀 Starting preview app..."
 	@echo "📍 Open http://localhost:3000 to view stories"
 	@cd apps/preview && npm run dev
+
+kill:
+	@echo "🛑 Killing development server on port 3000..."
+	@lsof -ti:3000 | xargs kill -9 2>/dev/null || echo "No process found on port 3000"
+	@echo "✅ Server stopped"
 
 build:
 	@echo "🔨 Building preview app for production..."
